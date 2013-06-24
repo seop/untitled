@@ -34,5 +34,5 @@ def wget(savefile = '', url = '', url_encoding = 'utf8'):
         
     
 if __name__ == '__main__':
-    wget("d:/tmp/aaa.txt", "http://www.khgames.co.kr/news/photo/201306/64528_6485_5350.jpg" )
+    wget("d:/tmp/aaa.txt", "" )
     
