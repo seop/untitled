@@ -1,7 +1,10 @@
+#!/usr/bin/python3
+
 import os
 import sys
 from bs4 import BeautifulSoup
 import urllib.request
+import time
 
 def wget(savefile = '', url = '', url_encoding = 'utf8'):
     user_agent = 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.116 Safari/537.36'
@@ -19,7 +22,8 @@ def wget(savefile = '', url = '', url_encoding = 'utf8'):
         
     url = urllib.request.quote(url, safe = '\/|\&|\?|\=', encoding = url_encoding)
     url = 'http://' + url
-    
+
+
     try:
         req = urllib.request.Request(url)
         req.add_header('user-agent', user_agent)
@@ -51,5 +55,8 @@ def get_page(url, encoding = 'utf8'):
     
     
 if __name__ == '__main__':
-    wget("d:/tmp/aaa.txt", "" )
+    url = sys.argv[1]
+    filename = str(time.time())
+    
+    wget(filename, url)
     
